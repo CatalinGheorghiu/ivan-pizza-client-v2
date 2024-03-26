@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --footer-height: 96px;
+    --header-height: 128px;
+    --footer-desktop-height: 72px;
+    --header-desktop-height: 164px;
+  }
+
+  main {
+    max-height: calc(100vh - (var(--footer-height) + var(--header-height)));
+
+
+  }
+
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#FFF, #FFF);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#E7272D, #E7272D)
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
+  }
+
+  @media (min-width: 768px ) {
+    main {
+      max-height: calc(100vh - (var(--footer-desktop-height) + var(--header-desktop-height)));
+    }
+  }
+}
