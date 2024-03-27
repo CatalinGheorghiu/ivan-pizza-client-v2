@@ -3,7 +3,7 @@ import HeaderMobile from "@/components/layout/header/HeaderMobile.tsx";
 
 const Header = () => {
   return (
-    <header className="relative p-6 md:p-8">
+    <header className="relative mx-auto max-w-screen-xl p-6 md:p-8">
       <HeaderMobile />
       <HeaderDesktop />
     </header>
