@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout.tsx";
 const Home = () => {
   return (
     <Layout>
-      <section className="flex h-full flex-col justify-center font-bold">
+      <section className="my-auto flex h-full flex-col justify-center font-bold">
         <div className="max-w-72 md:max-w-96">
           <h2
             className="pb-2 tracking-[0.25rem] text-red-600 md:pb-4 md:text-xl md:tracking-[0.6rem]"

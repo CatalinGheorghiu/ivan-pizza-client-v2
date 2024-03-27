@@ -10,10 +10,12 @@
     --header-desktop-height: 164px;
   }
 
+  html,body {
+    height: 100vh;
+  }
+
   main {
-    max-height: calc(100vh - (var(--footer-height) + var(--header-height)));
-
-
+    min-height: calc(100vh - (var(--footer-height) + var(--header-height)));
   }
 
   .link-underline {
@@ -36,7 +38,7 @@
 
   @media (min-width: 768px ) {
     main {
-      max-height: calc(100vh - (var(--footer-desktop-height) + var(--header-desktop-height)));
+      min-height: calc(100vh - (var(--footer-desktop-height) + var(--header-desktop-height)));
     }
   }
 }
