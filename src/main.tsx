@@ -6,6 +6,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import About from "@/pages/About.tsx";
 import Home from "@/pages/Home.tsx";
 import PizzaMenu from "@/pages/PizzaMenu.tsx";
 
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/menu",
     element: <PizzaMenu />
+  },
+  {
+    path: "/about",
+    element: <About />
   }
 ]);
 
