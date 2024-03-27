@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier"
   ],
@@ -27,6 +28,8 @@ module.exports = {
     "import/no-duplicates": "error",
     "@tanstack/query/exhaustive-deps": "error",
     "@tanstack/query/no-rest-destructuring": "warn",
-    "@tanstack/query/stable-query-client": "error"
+    "@tanstack/query/stable-query-client": "error",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-uses-react": "off",
   }
 };

@@ -5,7 +5,7 @@ import { getCurrentDate } from "@/utils";
 const Footer = () => {
   return (
     <footer className="p-6 text-center text-sm font-semibold leading-6 md:text-base">
-      © Ivan's Pizza {getCurrentDate()}. Website Designed and Developed by{" "}
+      © Ivan&apos;s Pizza {getCurrentDate()}. Website Designed and Developed by{" "}
       <Link
         to="https://catalin-gheorghiu.dev/"
         target="_blank"
