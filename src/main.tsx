@@ -6,13 +6,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "@/App.tsx";
+import Home from "@/pages/Home.tsx";
+import PizzaMenu from "@/pages/PizzaMenu.tsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <Home />
+  },
+  {
+    path: "/menu",
+    element: <PizzaMenu />
   }
 ]);
 
