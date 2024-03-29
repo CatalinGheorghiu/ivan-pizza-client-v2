@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 
+import GoToTopButton from "@/components/GoToTopButton.tsx";
 import Footer from "@/components/layout/Footer.tsx";
 import Header from "@/components/layout/header/Header.tsx";
 
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <GoToTopButton />
     </>
   );
 };

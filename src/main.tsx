@@ -10,11 +10,21 @@ import About from "@/pages/About.tsx";
 import Home from "@/pages/Home.tsx";
 import PizzaMenu from "@/pages/PizzaMenu.tsx";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 6
+    }
+  }
+});
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
+  },
+  {
+    path: "/menu",
+    element: <PizzaMenu />
   },
   {
     path: "/menu",
