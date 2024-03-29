@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import About from "@/pages/About.tsx";
 import Home from "@/pages/Home.tsx";
+import PizzaDetails from "@/pages/PizzaDetails.tsx";
 import PizzaMenu from "@/pages/PizzaMenu.tsx";
 
 const queryClient = new QueryClient({
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/pizza/:id",
+    element: <PizzaDetails />
   }
 ]);
 
