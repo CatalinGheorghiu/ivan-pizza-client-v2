@@ -5,6 +5,9 @@ export default {
     extend: {
       backgroundImage: {
         "hero-pattern": "url('@/assets/work.jpg')"
+      },
+      aspectRatio: {
+        "4/3": "4 / 3"
       }
     }
   },

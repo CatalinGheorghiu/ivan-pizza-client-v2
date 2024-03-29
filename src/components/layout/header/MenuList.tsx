@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { menuItems } from "@/utils/menuItems.ts";
 
@@ -8,7 +8,7 @@ const MenuList = () => {
       {menuItems.length > 0 &&
         menuItems.map(({ label, url }) => (
           <li key={url} className="link link-underline link-underline-black">
-            <Link to={url}>{label}</Link>
+            <NavLink to={url}>{label}</NavLink>
           </li>
         ))}
     </ul>

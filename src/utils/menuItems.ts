@@ -9,6 +9,10 @@ export const menuItems: MenuItem[] = [
     url: "/"
   },
   {
+    label: "Menu",
+    url: "/menu"
+  },
+  {
     label: "About",
     url: "/about"
   },
