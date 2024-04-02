@@ -12,7 +12,7 @@ const HeaderMobile = () => {
     <>
       <div className="flex justify-between md:hidden">
         <button
-          className="z-20 cursor-pointer"
+          className="z-50 cursor-pointer"
           onClick={() => setOpenMenu(!openMenu)}
         >
           <Hamburger openMenu={openMenu} />
@@ -25,7 +25,7 @@ const HeaderMobile = () => {
 
       <nav
         className={`
-          fixed bottom-0 left-0 right-0 top-0 z-10 h-screen transform bg-stone-950 p-6 transition-all duration-500 
+          fixed bottom-0 left-0 right-0 top-0 z-40 h-screen transform bg-stone-950 p-6 transition-all duration-500 
           ${openMenu ? "translate-x-0" : "-translate-x-full"}
         `}
       >

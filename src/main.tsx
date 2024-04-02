@@ -7,6 +7,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import About from "@/pages/About.tsx";
+import Contact from "@/pages/Contact.tsx";
 import Home from "@/pages/Home.tsx";
 import PizzaDetails from "@/pages/PizzaDetails.tsx";
 import PizzaMenu from "@/pages/PizzaMenu.tsx";
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/contact",
+    element: <Contact />
   },
   {
     path: "/pizza/:id",

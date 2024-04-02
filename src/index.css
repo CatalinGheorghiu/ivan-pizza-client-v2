@@ -39,6 +39,29 @@
   .link .active {
     color: rgb(245 158 11);
   }
+
+  .round {
+    background:
+        -moz-radial-gradient(0 100%, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -moz-radial-gradient(100% 100%, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -moz-radial-gradient(100% 0, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -moz-radial-gradient(0 0, circle, rgba(204,0,0,0) 20px, #dfddd5 15px);
+    background:
+        -o-radial-gradient(0 100%, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -o-radial-gradient(100% 100%, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -o-radial-gradient(100% 0, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -o-radial-gradient(0 0, circle, rgba(204,0,0,0) 20px, #dfddd5 15px);
+    background:
+        -webkit-radial-gradient(0 100%, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -webkit-radial-gradient(100% 100%, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -webkit-radial-gradient(100% 0, circle, rgba(204,0,0,0) 20px, #dfddd5 15px),
+        -webkit-radial-gradient(0 0, circle, rgba(204,0,0,0) 20px, #dfddd5 15px);
+    background-position: bottom left, bottom right, top right, top left;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 51% 50%;
+    background-repeat: no-repeat;
+  }
   
   @keyframes spin-pizza {
     0% {

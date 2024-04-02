@@ -8,6 +8,11 @@ export default {
       },
       aspectRatio: {
         "4/3": "4 / 3"
+      },
+      colors: {
+        "custom-red-1": "#af4a38",
+        "custom-gray-1": "#dfddd5",
+        "custom-brown-1": "#b4a79d"
       }
     }
   },
