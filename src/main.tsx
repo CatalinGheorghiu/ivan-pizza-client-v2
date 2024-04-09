@@ -9,7 +9,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "@/pages/About.tsx";
 import Contact from "@/pages/Contact.tsx";
 import Home from "@/pages/Home.tsx";
+import PizzaCreate from "@/pages/PizzaCreate.tsx";
 import PizzaDetails from "@/pages/PizzaDetails.tsx";
+import PizzaEdit from "@/pages/PizzaEdit.tsx";
 import PizzaMenu from "@/pages/PizzaMenu.tsx";
 
 const queryClient = new QueryClient({
@@ -29,16 +31,20 @@ const router = createBrowserRouter([
     element: <PizzaMenu />
   },
   {
-    path: "/menu",
-    element: <PizzaMenu />
-  },
-  {
     path: "/about",
     element: <About />
   },
   {
     path: "/contact",
     element: <Contact />
+  },
+  {
+    path: "/pizza/create",
+    element: <PizzaCreate />
+  },
+  {
+    path: "/pizza/edit/:id",
+    element: <PizzaEdit />
   },
   {
     path: "/pizza/:id",

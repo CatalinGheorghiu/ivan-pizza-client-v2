@@ -10,22 +10,36 @@ export type RulesType = {
 
 export const validateValue = (
   _name: string,
-  value: string,
+  value: string | string[],
   rules: ValidationRule
 ) => {
   const { minLength, maxLength, customValidation } = rules;
-  const trimmedValue = value.trim();
 
-  if (customValidation && customValidation && !customValidation(trimmedValue)) {
-    return `Field is not valid!`;
-  }
+  if (typeof value === "string") {
+    const trimmedValue = value.trim();
+    if (
+      customValidation &&
+      customValidation &&
+      !customValidation(trimmedValue)
+    ) {
+      return `Field is not valid!`;
+    }
 
-  if (trimmedValue.length < minLength) {
-    return `Field must contain at least ${minLength} characters!`;
-  } else if (trimmedValue.length > maxLength) {
-    return `Field must not contain more than ${maxLength} characters!`;
+    if (trimmedValue.length < minLength) {
+      return `Field must contain at least ${minLength} characters!`;
+    } else if (trimmedValue.length > maxLength) {
+      return `Field must not contain more than ${maxLength} characters!`;
+    } else {
+      return "";
+    }
   } else {
-    return "";
+    if (value.length < minLength) {
+      return `Field must contain at least ${minLength} item(s)!`;
+    } else if (value.length > maxLength) {
+      return `Field must not contain more than ${maxLength} items!`;
+    } else {
+      return "";
+    }
   }
 };
 
@@ -40,5 +54,10 @@ export const validationRules: RulesType = {
     customValidation: (value: string) => emailValidation(value),
     maxLength: 100
   },
-  message: { minLength: 10, maxLength: 500 }
+  message: { minLength: 10, maxLength: 500 },
+  name: { minLength: 3, maxLength: 20 },
+  origin: { minLength: 3, maxLength: 20 },
+  ingredientsIds: { minLength: 1, maxLength: 100 },
+  description: { minLength: 10, maxLength: 200 },
+  image: { minLength: 1, maxLength: 100 }
 };

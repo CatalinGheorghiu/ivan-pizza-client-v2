@@ -1,5 +1,5 @@
 import ContactStepButton from "@/components/contact/ContactStepButton.tsx";
-import { InputFieldError } from "@/hooks/useForm.ts";
+import { InputFieldError } from "@/types/validation.ts";
 import { steps } from "@/utils/contactSteps.ts";
 
 type ContactButtonsProps = {

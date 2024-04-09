@@ -1,18 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
+import { InputFieldError, InputFieldsType } from "@/types/validation.ts";
 import {
   validateValue,
   ValidationRule,
   validationRules
 } from "@/utils/formValidation";
-
-export type InputFieldsType = {
-  [key: string]: string;
-};
-
-export type InputFieldError = {
-  [key: string]: string;
-};
 
 const initialState = {
   firstName: "",
@@ -21,11 +14,9 @@ const initialState = {
   message: ""
 };
 
-const initialErrors = {};
-
 const useForm = () => {
   const [values, setValues] = useState<InputFieldsType>(initialState);
-  const [errors, setErrors] = useState<InputFieldError>(initialErrors);
+  const [errors, setErrors] = useState<InputFieldError>({});
   const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -41,10 +32,10 @@ const useForm = () => {
   };
 
   const validateAllFields = () => {
-    let newErrors: InputFieldsType = {} as InputFieldsType;
+    let newErrors: InputFieldsType = {};
 
     for (const [key, value] of Object.entries(values)) {
-      const rules = validationRules[key as keyof InputFieldsType];
+      const rules = validationRules[key];
       newErrors = { ...newErrors, [key]: validateValue(key, value, rules) };
     }
 
@@ -74,7 +65,7 @@ const useForm = () => {
     const accessKey = import.meta.env.VITE_WEB3_FORMS_ACCESS_KEY;
     formData.append("access_key", accessKey);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const response = await fetch(`${import.meta.env.VITE_WEB3_FORMS_URL}`, {
       method: "POST",
       body: formData
     });
@@ -86,7 +77,7 @@ const useForm = () => {
     }
 
     try {
-      return await response.json();
+      return response.json();
     } catch (error) {
       if (error instanceof Error) {
         console.error(error);
