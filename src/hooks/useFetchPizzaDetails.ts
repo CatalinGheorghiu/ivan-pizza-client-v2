@@ -4,7 +4,7 @@ import { PizzaType } from "@/types/pizza.ts";
 
 const fetchPizzaDetails = async (pizzaId: string): Promise<PizzaType> => {
   const response = await fetch(
-    `${import.meta.env.VITE_BASE_URL}/pizza/${pizzaId}`
+    `${import.meta.env.VITE_SERVER_URL}/pizza/${pizzaId}`
   );
   return response.json();
 };

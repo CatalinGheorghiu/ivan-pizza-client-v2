@@ -14,7 +14,7 @@ export const useFetchPaginatedPizzas = async ({
 }): Promise<PizzaDataType> => {
   const offset = pageParam * PAGINATION_LIMIT;
   const response = await fetch(
-    `${import.meta.env.VITE_BASE_URL}/pizza?limit=${PAGINATION_LIMIT}&offset=${offset}`
+    `${import.meta.env.VITE_SERVER_URL}/pizza?limit=${PAGINATION_LIMIT}&offset=${offset}`
   );
   const data = await response.json();
   const nextPage = data.length === PAGINATION_LIMIT ? pageParam + 1 : null;

@@ -1,7 +1,6 @@
-export type Ingredient = {
+export type IngredientType = {
   id: string;
   name: string;
-  pizzasIds: string[];
 };
 
 export type PizzaType = {
@@ -12,5 +11,13 @@ export type PizzaType = {
   description: string;
   canBeDeleted: boolean;
   ingredientsIds: string[];
-  ingredients: Ingredient[];
+  ingredients: IngredientType[];
+};
+
+export type InitialFormValuesType = {
+  name: string;
+  origin: string;
+  image: string;
+  ingredientsIds: string[];
+  description: string;
 };

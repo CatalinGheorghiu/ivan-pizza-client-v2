@@ -1,15 +1,33 @@
-import { useLocation } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import Error from "@/components/Error.tsx";
+import ErrorDisplay from "@/components/ErrorDisplay.tsx";
 import Layout from "@/components/layout/Layout.tsx";
 import Loading from "@/components/Loading.tsx";
 import { useFetchPizzaDetails } from "@/hooks/useFetchPizzaDetails.ts";
+import { splitForUrl } from "@/utils";
 
 const PizzaDetails = () => {
   const {
     state: { pizzaId }
   } = useLocation();
   const { data: pizza, status, error } = useFetchPizzaDetails(pizzaId);
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+
+  async function handleDeletePizza() {
+    const response = await fetch(
+      `${import.meta.env.VITE_SERVER_URL}/pizza/${pizzaId}`,
+      {
+        method: "DELETE"
+      }
+    );
+
+    if (response.ok) {
+      await queryClient.invalidateQueries({ queryKey: ["pizzas"] });
+      navigate("/menu");
+    }
+  }
 
   return (
     <Layout>
@@ -17,7 +35,7 @@ const PizzaDetails = () => {
         {status === "pending" ? (
           <Loading />
         ) : status === "error" ? (
-          <Error message={error.message} />
+          <ErrorDisplay message={error.message} />
         ) : (
           <div className="bg-white p-4 md:p-10">
             <div>
@@ -50,6 +68,27 @@ const PizzaDetails = () => {
                 ))}
               </ul>
             </div>
+
+            {pizza?.canBeDeleted && (
+              <div className="mb-4 flex w-full gap-x-4 font-medium">
+                <Link
+                  to={`/pizza/edit/${splitForUrl(pizza.name)}`}
+                  state={{ pizza }}
+                  className="w-full"
+                >
+                  <button className="w-full border px-4 py-2 transition-all duration-300 hover:bg-stone-950 hover:text-white">
+                    Edit
+                  </button>
+                </Link>
+
+                <button
+                  onClick={handleDeletePizza}
+                  className="w-full bg-custom-red-1 px-4 py-2 text-white transition-all duration-300 hover:bg-red-800"
+                >
+                  Delete
+                </button>
+              </div>
+            )}
           </div>
         )}
       </section>

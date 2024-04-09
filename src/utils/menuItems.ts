@@ -13,6 +13,10 @@ export const menuItems: MenuItem[] = [
     url: "/menu"
   },
   {
+    label: "Create your pizza",
+    url: "/pizza/create"
+  },
+  {
     label: "About",
     url: "/about"
   },
