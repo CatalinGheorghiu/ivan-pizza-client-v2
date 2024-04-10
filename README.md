@@ -1,41 +1,35 @@
-# React template with:
+# Ivan's Pizza (client)
 
->- Vite 
->- TypeScript 
->- React Query
->- React Router
->- Tailwind
->- Prettier
->- ESLint
->- Husky
->- Lint staged
->- Commit lint
+## Description
+This repository contains the client-side code for Ivan's Pizza web application. It provides a user interface for browsing the available pizzas, creating, editing, and deleting custom pizzas. Additionally, it includes pages for about and contact information.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+1. Clone the repository.
+2. Generate a `.env` file from `.env.example`.
+3. Install dependencies using `yarn install`.
+4. Start the project using `yarn dev`.
 
-Currently, two official plugins are available:
+## Main Stack
+- **Vite**: Build tool for modern web development.
+- **TypeScript**: Typed superset of JavaScript.
+- **React Query**: Data fetching and caching library for React.
+- **React Router**: Declarative routing for React applications.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Prettier**: Opinionated code formatter.
+- **ESLint**: JavaScript and TypeScript linter.
+- **Husky**: Git hooks made easy.
+- **Lint Staged**: Run linters on staged files.
+- **Commit lint**: Lint commit messages to adhere to conventional commits.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+After installation, you can access the project at [http://localhost:3000](http://localhost:3000).
 
-## Expanding the ESLint configuration
+## Live Demo
+A live demo of the project can be found [here](https://ivan-pizza-client-v2.vercel.app/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Dependencies
+- **Node.js**: v14 or higher
+- **npm**: v6 or higher
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Configuration
+Ensure that the `.env` file contains any necessary configuration variables.
